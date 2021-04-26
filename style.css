@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+p,
+h1,
+h2 {
+  font-family: "Press Start 2P";
+}
+
+body {
+  background: radial-gradient(#fff, #ffefba);
+  background: -moz-radial-gradient(circle, #fff, #ffefba);
+  background-attachment: fixed;
+}
+
+.gameButton {
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  color: white;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loadScreen {
+  width: 1360px;
+  height: 760px;
+  background-image: url("images/load-screen.jpg");
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#loadScreen img {
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 700px);
+}
+
+#loadScreen button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: calc(50% + 258px);
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 20px;
+  background: lightgray;
+  border: none;
+}
+
+#loadScreen button:hover {
+  background: darkgreen;
+  color: white;
+  border: none;
+}
+
+#loadScreen p {
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: calc(50% - 160px);
+  font-size: 12px;
+}
+
+#loadScreen p a {
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: white;
+}
+
+#startScreen {
+  display: block;
+  width: 1360px;
+  height: 760px;
+  background-color: blue;
+}
+
+#startScreen button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: calc(50% + 200px);
+  left: 50%;
+  font-size: 24px;
+}
+
+#startScreen video {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 1360px;
+  height: 760px;
+  transform: scale(1.42);
+}
+
+#startScreen p {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 280px);
+  transform: translate(-50%, -50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+#completeScreen {
+  display: none;
+  text-align: center;
+  font-family: "Press Start 2P";
+  text-transform: uppercase;
+  color: yellow;
+  font-size: 12px;
+}
+
+#deadScreen {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  width: 220px;
+  height: 200px;
+  padding-top: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#deadScreen > * {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#deadScreen h1 {
+  font-size: 45px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#deadScreen button {
+  font-size: 15px;
+}
+
+#endScreen {
+  display: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 700px;
+  height: 200px;
+  padding: 25px;
+}
+
+#endScreen h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  color: yellow;
+}
+
+#endScreen h2 {
+  color: white;
+  margin-bottom: 40px;
+  font-size: 27px;
+}
+
+#endScreen p {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: white;
+}
+
+#endScreen p a {
+  background-color: white;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#endScreen p a:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+#background {
+  background-repeat: repeat-x;
+  width: 1360px;
+  height: 760px;
+  z-index: -1;
+  animation: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#screen {
+  background: black;
+  width: 1360px;
+  height: 760px;
+  z-index: -2;
+}

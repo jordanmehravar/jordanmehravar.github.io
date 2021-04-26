@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head> 
+<body>
+<canvas id="canvas"width=1360 height=760></canvas>
+<div id="loadScreen">
+    <image src="images/mario-frames.gif"></image>
+    <button id="loadGame">Ready</button>
+    <p>Created by <a href="">Jordan M.</a> & <a href="">Shoghi H.</a></p>
+</div>    
+<div id="startScreen">    
+    <button class="gameButton">Press Enter to Play</button>
+    <image src="images/start-screen.png"></image>
+    <video playsinline autoplay loop muted>
+        <source src="images/start-screen.mp4" />
+    </video>
+    <p>Created by Jordan M. & Shoghi H.</p>
+</div>
+<div id="completeScreen">
+    <h1 id="levelComplete">Level Completed</h1>
+</div>
+<div id="deadScreen">
+    <h1>Game Over</h1>
+    <button class="gameButton">Press Enter<br>to Try Again</button>
+</div>
+<div id="endScreen">
+    <h1>Congratulations</h1>
+    <h2>Thank you for playing!</h2>
+    <p>Created by <a href="">Jordan M.</a> & <a href="">Shoghi H.</a></p>
+</div>
+<div id="background"></div>
+<div id="screen"></div>
+
+<script>
+    const cursor = document.querySelector("*").style;
+    const loadScreen = document.getElementById("loadScreen").style;
+    const loadGame = document.getElementById("loadGame");
+    const startScreen = document.getElementById("startScreen").style;
+    const completeScreen = document.getElementById('completeScreen').style;
+    const levelComplete = document.getElementById('levelComplete');
+    const deadScreen = document.getElementById('deadScreen').style;
+    const endScreen = document.getElementById('endScreen').style;
+    const background = document.getElementById('background').style;
+    startScreen.display = "none";
+    background.backgroundPositionX = "1px";
+    const ctx = canvas.getContext('2d');    
+    const CANVAS_W = canvas.width;
+    const CANVAS_H = canvas.height;
+    const CENTER_X = CANVAS_W / 2;
+    const CENTER_Y = CANVAS_H / 2;
+    const SPAWN_SIZE = 40;
+    const SPAWN_ROWS = CANVAS_H / SPAWN_SIZE;
+    var spawnArray = new Array(SPAWN_ROWS).fill(0); 
+    const BG_SPEED = 3;
+    const FPS = 60;
+    var gameDemo = false;
+    var gamePause = false;
+    var gameTransition = false;
+</script>
+<script src="levels.js"></script>
+<script src="helpers.js"></script>
+<script src="game.js"></script>
+<script src="player.js"></script>
+<script src="enemies.js"></script>
+</body>
+</html>
